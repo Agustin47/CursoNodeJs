@@ -9,11 +9,14 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 // ==========================
+//  Login, Fecha de expiración / JWT SEED
+// ==========================
+process.env.JWT_Expirate = process.env.JWT_Expirate || 60 * 60 * 60 * 24;
+process.env.JWT_Seed = process.env.JWT_Seed || 'cafe-development';
+
+// ==========================
 //  Base de Datos
 // ==========================
 let urlDB = '';
 
-if (process.env.NODE_ENV == 'dev') urlDB = 'mongodb://localhost:27017/cafe';
-else urlDB = 'mongodb+srv://strider:wUHQv9h9bsf2L25J@cluster0-sjc6r.mongodb.net/cafe';
-
-process.env.URLDB = urlDB;
+process.env.MongoDB_URL = process.env.MongoDB_URL || 'mongodb://localhost:27017/cafe';
