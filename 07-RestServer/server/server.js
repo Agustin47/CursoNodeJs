@@ -3,12 +3,17 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // parse aplication/x-www-form-urlendoded (formato de como viene, elegimos este por el postman)
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // // parse aplication/json (formado a traducir)
 app.use(bodyParser.json());
+
+
+app.use(express.static(path.resolve(__dirname, '../public')));
+
 
 /// =========================
 ///  Routes
